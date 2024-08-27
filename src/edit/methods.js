@@ -561,13 +561,16 @@ export default function (CodeMirror) {
       clearCaches(this);
       scrollToCoords(this, this.doc.scrollLeft, this.doc.scrollTop);
       updateGutterSpace(this.display);
-      if (
-        oldHeight == null ||
-        Math.abs(oldHeight - textHeight(this.display)) > 0.5 ||
-        this.options.lineWrapping
-      )
-        estimateLineHeights(this);
-      signal(this, "refresh", this);
+      // splitting the work to be done in the future
+      setTimeout(() => {
+        if (
+          oldHeight == null ||
+          Math.abs(oldHeight - textHeight(this.display)) > 0.5 ||
+          this.options.lineWrapping
+        )
+          estimateLineHeights(this);
+        signal(this, "refresh", this);
+      }, 1);
     }),
 
     swapDoc: methodOp(function (doc) {
