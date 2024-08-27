@@ -1,13 +1,12 @@
-import buble from '@rollup/plugin-buble';
-import copy from 'rollup-plugin-copy'
+import copy from "rollup-plugin-copy";
 
 let copyVim = copy({
   targets: [
-    { 
-      src: require.resolve("cm5-vim/vim.js").replace(/\\/g,  "/"), 
-      dest: "./keymap" 
-    }
-  ]
+    {
+      src: require.resolve("cm5-vim/vim.js").replace(/\\/g, "/"),
+      dest: "./keymap",
+    },
+  ],
 });
 
 export default [
@@ -25,9 +24,9 @@ export default [
 `,
       format: "umd",
       file: "lib/codemirror.js",
-      name: "CodeMirror"
+      name: "CodeMirror",
     },
-    plugins: [ buble({namedFunctionExpressions: false}), copyVim ]
+    plugins: [copyVim],
   },
   {
     input: ["src/addon/runmode/runmode-standalone.js"],
@@ -37,7 +36,7 @@ export default [
       name: "CodeMirror",
       freeze: false, // IE8 doesn't support Object.freeze.
     },
-    plugins: [ buble({namedFunctionExpressions: false}) ]
+    plugins: [],
   },
   {
     input: ["src/addon/runmode/runmode.node.js"],
@@ -47,6 +46,6 @@ export default [
       name: "CodeMirror",
       freeze: false, // IE8 doesn't support Object.freeze.
     },
-    plugins: [ buble({namedFunctionExpressions: false}) ]
+    plugins: [],
   },
 ];
