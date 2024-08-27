@@ -93,7 +93,7 @@ export function applyTextInput(cm, inserted, deleted, sel, origin) {
 
 export function handlePaste(e, cm) {
   console.log("Paste!", e);
-  let pasted = e.clipboardData && e.clipboardData.getData("Text");
+  let pasted = e.clipboardData && cm.preprocessPaste(e.clipboardData);
   if (pasted) {
     e.preventDefault();
     if (!cm.isReadOnly() && !cm.options.disableInput && cm.hasFocus())

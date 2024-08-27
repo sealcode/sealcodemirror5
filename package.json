@@ -1,6 +1,6 @@
 {
   "name": "@sealcode/sealcodemirror",
-  "version": "5.70.0-beta",
+  "version": "5.70.0-beta2",
   "main": "lib/codemirror.js",
   "style": "lib/codemirror.css",
   "author": {
