@@ -4,6 +4,10 @@
 
 [![Build Status](https://github.com/codemirror/codemirror5/workflows/main/badge.svg)](https://github.com/codemirror/codemirror5/actions)
 
+This is a Sealcode fork of CodeMirror that adds clipboard mime types information
+to the paste event to enable pasting from formatted text in Sealcode's fork of
+SimpleMDE (https://github.com/sealcode/sealmde-markdown-editor)
+
 CodeMirror is a versatile text editor implemented in JavaScript for
 the browser. It is specialized for editing code, and comes with over
 100 language modes and various addons that implement more advanced
