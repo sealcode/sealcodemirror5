@@ -1,5 +1,5 @@
 {
-  "name": "sealcodemirror",
+  "name": "@sealcode/sealcodemirror",
   "version": "5.70-beta",
   "main": "lib/codemirror.js",
   "style": "lib/codemirror.css",
