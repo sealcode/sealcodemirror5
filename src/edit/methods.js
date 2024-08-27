@@ -486,7 +486,7 @@ export default function (CodeMirror) {
       return !!(this.options.readOnly || this.doc.cantEdit);
     },
     preprocessPaste: function (clipboardData) {
-      return (clipboardData && clipboardData.getData("Text") + "PASTED") || "";
+      return (clipboardData && clipboardData.getData("Text")) || "";
     },
 
     scrollTo: methodOp(function (x, y) {
