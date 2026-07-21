@@ -1,6 +1,6 @@
 {
   "name": "@sealcode/sealcodemirror",
-  "version": "5.70.0-beta5",
+  "version": "5.70.0-beta6",
   "main": "lib/codemirror.js",
   "style": "lib/codemirror.css",
   "author": {
@@ -14,7 +14,7 @@
     "lib": "./lib"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c; sed -i \"s/typeof define === 'function' && define.amd ? define(factory) ://\" lib/codemirror.js",
     "watch": "rollup -w -c",
     "prepare": "npm run-script build",
     "test": "node ./test/run.js",
@@ -38,7 +38,7 @@
   "homepage": "https://codemirror.net/5/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codemirror/CodeMirror.git"
+    "url": "https://github.com/sealcode/sealcodemirror5"
   },
   "jspm": {
     "directories": {},
